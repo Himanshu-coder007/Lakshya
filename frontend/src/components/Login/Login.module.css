@@ -15,7 +15,7 @@
 
 .login .left {
     height: 100vh;
-    background-color: #bcf7f0;
+    background-color: #D7CEFB;
     width: 60%;
     box-shadow: 0px 0px 10px #999;
 }
@@ -29,6 +29,7 @@
 .login .content img {
     width: 100%;
     height: auto;
+    filter: drop-shadow(0px 0px 5px #999);
 }
 
 .login .acontent {
@@ -40,13 +41,19 @@
 
 .login .acontent .head {
     font-size: 40px;
+    font-family: 'Aladin', sans-serif;
+    letter-spacing: 4px;
+}
+
+.login .acontent .head span {
+    font-weight: bold;
 }
 
 .login .acontent img {
     margin-top: 20px;
     width: 65%;
     height: auto;
-    filter: drop-shadow(0px 0px 5px rgb(153, 209, 197));
+    filter: drop-shadow(0px 0px 5px #ada5cf);
     margin-left: 20px;
 }
 
@@ -63,6 +70,8 @@
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 20px;
+    font-family: 'Aladin', sans-serif;
+    letter-spacing: 4px;
 }
 
 .chooseLanguageDiv {
@@ -85,7 +94,7 @@
     appearance: none;
     padding: 10px;
     border: 0;
-    background-color: #47D6C5;
+    background-color: #8c77f0;
     border-radius: 5px;
     color: white;
     box-shadow: 0px 0px 2px #b0b0b0;
@@ -167,7 +176,7 @@
 }
 
 .right button {
-    background-color: #47D6C5;
+    background-color: #8c77f0;
     border: 0;
     border-radius: 10px;
     color: white;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../../assets/Logo2.svg'
+import Logo from '../../assets/Logo3.svg'
 import Seperator from '../../assets/Seperator.svg'
 import UserName from '../../assets/UserName.svg'
 import Password from '../../assets/Password.svg'
@@ -54,7 +54,7 @@ const Login = () => {
           <img src={Logo} width="20%" alt="" />
         </div>
         <div className={styles.acontent}>
-          <p className={styles.head}>Welcome to LAKSHYA</p>
+          <p className={styles.head}>Welcome to <span>LAKSHYA</span></p>
           <img src={Image} width="60%" height="auto" alt="" />
         </div>
       </div>
