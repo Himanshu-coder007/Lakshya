@@ -80,6 +80,7 @@ const Login = () => {
             className={styles.inputTag}
             placeholder='Enter Email'
             onChange={handleInputChange}
+            required
           />
         </div>
         <div className={styles.inputDiv}>
@@ -90,10 +91,11 @@ const Login = () => {
             className={styles.inputTag}
             placeholder='Enter Password'
             onChange={handleInputChange}
+            required
           />
         </div>
         <p className={styles.forgotPass}>Forgot Password</p>
-        <button onClick={fetchLoginDetails}>Submit</button>
+        <button onClick={fetchLoginDetails} type='submit'>Submit</button>
       </form>
     </div>
   )
