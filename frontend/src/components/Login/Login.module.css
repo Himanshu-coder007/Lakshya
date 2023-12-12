@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.login .left {
+    height: 100vh;
+    background-color: #bcf7f0;
+    width: 60%;
+    box-shadow: 0px 0px 10px #999;
+}
+
+.login .content {
+    width: 10%;
+    height: auto;
+    margin: 20px;
+}
+
+.login .content img {
+    width: 100%;
+    height: auto;
+}
+
+.login .acontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.login .acontent .head {
+    font-size: 40px;
+}
+
+.login .acontent img {
+    margin-top: 20px;
+    width: 65%;
+    height: auto;
+    filter: drop-shadow(0px 0px 5px rgb(153, 209, 197));
+    margin-left: 20px;
+}
+
+.login .right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 8%;
+}
+
+.loginHead {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.chooseLanguageDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+    position: relative;
+}
+
+.chooseLanguageDiv p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.chooseLanguageDiv select {
+    width: 100%;
+    appearance: none;
+    padding: 10px;
+    border: 0;
+    background-color: #47D6C5;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 0px 2px #b0b0b0;
+    cursor: pointer;
+}
+
+.chooseLanguageDiv .select {
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    border-right: 4px solid white;
+    border-bottom: 4px solid white;
+    border-left: 4px solid transparent;
+    border-top: 4px solid transparent;
+    bottom: 16px;
+    right: 17px;
+}
+
+.chooseLanguageDiv select option {
+    line-height: 30px;
+    background-color: white;
+    font-size: 14px;
+    color: #999;
+}
+
+.chooseLanguageDiv select:focus {
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.seperator {
+    width: 99%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inputDiv {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid #999;
+}
+
+.inputImage {
+    width: 6%;
+    height: auto;
+}
+
+.inputDiv input {
+    border: 0;
+    outline: 0;
+    width: 85%;
+    padding: 7px 10px;
+    background-color: transparent;
+}
+
+.inputDiv input:focus {
+    border: 0;
+    outline: 0;
+}
+
+.forgotPass {
+    width: 100%;
+    margin: auto;
+    text-align: right;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.forgotPass:hover {
+    font-size: 14px;
+}
+
+.right button {
+    background-color: #47D6C5;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0px 0px 2px #b0b0b0;
+}
+
+.right button:hover {
+    transform: scale(1.02, 1.02);
+}

@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
+
+import ScrollToTop from "./includes/ScrollToTop/ScrollToTop.js"
+
+import Login from './components/Login/Login.js';
+import Student from './components/Student/Student';
+import Teacher from './components/Teacher/Teacher';
+import Admin from './components/Admin/Admin';
+import Parent from './components/Parent/Parent';
+import MOE from './components/MOE/MOE';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route index path='/' element={<Login />} />
+          <Route path='/student/*' element={<Student />} />
+          <Route path='/teacher/*' element={<Teacher />} />
+          <Route path='/admin/*' element={<Admin />} />
+          <Route path='/parent/*' element={<Parent />} />
+          <Route path='/moe/*' element={<MOE />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

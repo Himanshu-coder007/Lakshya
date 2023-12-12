@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.teacherHome {
+    width: 100%;
+}
+
+.homeLogo {
+    width: 10%;
+}
+
+.homeLogo img {
+    width: 50%;
+    height: auto;
+}
+
+.teacherNav {
+    background-color: #FFDCD1;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 5px #999;
+    z-index: 10;
+}
+
+.teacherLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.teacherLinks p {
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    height: max-content;
+}
+
+.teacherLinks p:hover {}
+
+.teacherProfile {
+    width: 10%;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accountImage {
+    width: 40%;
+    height: auto;
+}

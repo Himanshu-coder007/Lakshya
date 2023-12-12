@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFCCCB;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login .leftcircle {
+    position: absolute;
+    background-color: #FF6863;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    top: 80px;
+    left: 10vw;
+    box-shadow: 0px 0px 10px rgb(57, 57, 57);
+}
+
+.login .leftcylinder {
+    position: absolute;
+    transform: rotate(35deg);
+    background-color: #FF6863;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    bottom: 80px;
+    left: 20vw;
+    box-shadow: 0px 0px 10px rgb(57, 57, 57);
+}
+
+.login .rightcylinder {
+    position: absolute;
+    transform: rotate(-45deg);
+    background-color: #FF6863;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    top: 80px;
+    right: 20vw;
+    box-shadow: 0px 0px 10px rgb(57, 57, 57);
+}
+
+.login .rightcircle {
+    position: absolute;
+    background-color: #FF6863;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    bottom: 80px;
+    right: 10vw;
+    box-shadow: 0px 0px 10px rgb(57, 57, 57);
+}
+
+.innerLoginDiv {
+    width: 30%;
+    border-radius: 20px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.loginLogo {
+    width: 25%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.loginForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+}
+
+.chooseLanguageDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin: auto;
+    position: relative;
+}
+
+.chooseLanguageDiv p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.chooseLanguageDiv select {
+    width: 100%;
+    appearance: none;
+    padding: 10px;
+    border: 0;
+    background-color: #FF6863;
+    border-radius: 5px;
+    color: 15px;
+    color: white;
+}
+
+.chooseLanguageDiv .select {
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    border-right: 4px solid white;
+    border-bottom: 4px solid white;
+    border-left: 4px solid transparent;
+    border-top: 4px solid transparent;
+    bottom: 17px;
+    right: 17px;
+}
+
+.chooseLanguageDiv select option {
+    line-height: 30px;
+    background-color: white;
+    font-size: 14px;
+    color: #a53733;
+}
+
+.chooseLanguageDiv select:focus {
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.seperator {
+    width: 99%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inputDiv {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid #FF6863;
+}
+
+.inputImage {
+    width: 6%;
+    height: auto;
+}
+
+.inputDiv input {
+    border: 0;
+    outline: 0;
+    width: 85%;
+    padding: 7px 10px;
+    background-color: transparent;
+}
+
+.inputDiv input:focus {
+    border: 0;
+    outline: 0;
+}
+
+.forgotPass {
+    width: 100%;
+    margin: auto;
+    text-align: right;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.forgotPass:hover {
+    font-size: 14px;
+}
+
+.loginForm button {
+    background-color: #FF6863;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.loginForm button:hover {
+    transform: scale(1.02, 1.02);
+}
