@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainDivParent {
+    display: flex;
+}
+
+.mainDivParent .aside {
+    z-index: 100;
+    background-color: #7C689D;
+    color: #fff;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 10px 10px black;
+}
+
+.mainDivParent h2 {
+    margin-bottom: 10px;
+}
+
+.mainDivParent ul {
+    list-style-type: none;
+}
+
+.mainDivParent .aside li {
+    margin-bottom: 10px;
+}
+
+.mainDivParent main {
+    flex: 1;
+}
+
+.mainDivParent header {
+    background-color: #7C689D;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: auto;
+    box-shadow: 10px 10px black;
+}
+
+.mainDivParent section {
+    margin: 20px;
+}
+
+
+.mainDivParent #todaysLearning {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+
+.mainDivParent #calendar {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 20px;
+
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+
+.mainDivParent #Today {
+    background-color: #d4edda;
+    color: #7C689D;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+
+.mainDivParent #Tommorow {
+    background-color: #d4edda;
+    color: #7C689D;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+
+
+.mainDivParent #Topic {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mainDivParent #children li {
+    margin: 5px 0;
+}
+
+/* Add more styling as needed */

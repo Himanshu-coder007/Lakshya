@@ -5,71 +5,82 @@
 }
 
 .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-}
-
-.login .left {
-    height: 100vh;
     background-color: #D7CEFB;
-    width: 60%;
-    box-shadow: 0px 0px 10px #999;
-}
-
-.login .content {
-    width: 10%;
-    height: auto;
-    margin: 20px;
-}
-
-.login .content img {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0px 0px 5px #999);
-}
-
-.login .acontent {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 70px;
 }
 
-.login .acontent .head {
+.loginNav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.loginNav img {
+    width: 6%;
+    filter: drop-shadow(0px 0px 5px #a7a0c7);
+    /* margin-top: 20px; */
+}
+
+.loginNav div {
+    width: 6%;
+}
+
+.loginNav .head {
     font-size: 40px;
     font-family: 'Aladin', sans-serif;
     letter-spacing: 4px;
 }
 
-.login .acontent .head span {
+.loginNav .head span {
     font-weight: bold;
+    color: #8c77f0;
+    text-shadow: 1px 1px 0px #000;
 }
 
-.login .acontent img {
-    margin-top: 20px;
-    width: 65%;
+.loginMainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background-color: white;
+    margin: 0 15%;
+    border-radius: 30px;
+}
+
+.loginLeftSubDiv {
+    width: 55%;
+}
+
+.loginLeftSubDiv img {
+    width: 100%;
     height: auto;
-    filter: drop-shadow(0px 0px 5px #ada5cf);
-    margin-left: 20px;
+    /* filter: drop-shadow(0px 0px 5px #a7a0c7); */
+    /* mix-blend-mode: color-burn */
 }
 
-.login .right {
-    width: 40%;
+.loginRightSubDiv {
+    width: 45%;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 8%;
+    padding: 50px 7% 50px 4%;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .loginHead {
     text-align: center;
     font-size: 30px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-family: 'Aladin', sans-serif;
     letter-spacing: 4px;
 }
@@ -129,15 +140,15 @@
 .seperator {
     width: 99%;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .inputDiv {
     width: 100%;
     padding: 5px 10px;
     border-radius: 10px;
-    margin: auto;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     border: 2px solid #999;
@@ -165,6 +176,7 @@
     width: 100%;
     margin: auto;
     text-align: right;
+    margin-bottom: 10px;
     color: #999;
     font-size: 13px;
     cursor: pointer;
@@ -175,7 +187,7 @@
     font-size: 14px;
 }
 
-.right button {
+.loginRightSubDiv button {
     background-color: #8c77f0;
     border: 0;
     border-radius: 10px;
@@ -189,6 +201,25 @@
     box-shadow: 0px 0px 2px #b0b0b0;
 }
 
-.right button:hover {
+.loginRightSubDiv button:hover {
     transform: scale(1.02, 1.02);
+}
+
+@media screen and (max-width: 320px) {
+    .loginLeftSubDiv {
+        display: none;
+    }
+
+    .loginRightSubDiv {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .chooseLanguageDiv p {
+        text-align: center;
+    }
+
+    .loginMainDiv {
+        width: 80%;
+    }
 }

@@ -4,6 +4,45 @@
     box-sizing: border-box;
 }
 
+.teacherNav {
+    background-color: rgba(154, 139, 255, 0.7);
+    width: 7%;
+    /* position: fixed; */
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    transition: 0.6s;
+}
+
+.expanded {
+    width: 15% !important;
+    align-items: flex-start;
+}
+
+.homeLogo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.homeLogo img {
+    width: 100%;
+    height: auto;
+}
+
+.teacherProfile {
+    width: 100%;
+}
+
+.teacherProfile img {
+    width: 100%;
+}
+
+/* 
 .homeLogo {
     width: 10%;
 }
@@ -16,10 +55,11 @@
 .teacherNav {
     background-color: #FFDCD1;
     padding: 10px 20px;
-    width: 100%;
+    width: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     position: sticky;
     top: 0;
     box-shadow: 0px 0px 5px #999;
@@ -55,4 +95,4 @@
 .accountImage {
     width: 40%;
     height: auto;
-}
+} */

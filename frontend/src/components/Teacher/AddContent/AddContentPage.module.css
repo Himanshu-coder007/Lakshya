@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.addContentBody {
+    background-image: url(Slide\ template.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 10px 0 50px;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+}
+
+.addContentBody .pageTitle {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.addContentBody .contentForm {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(154, 139, 225, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.addContentBody label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: bold;
+    /* Make label text bold */
+}
+
+.addContentBody input,
+.addContentBody textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    background-color: #E4E2F8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.addContentBody input:focus,
+.addContentBody textarea:focus {
+    outline: 0;
+}
+
+.addContentBody input[type="file"] {
+    border: none;
+}
+
+.addContentBody button {
+    background-color: #53ab91;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.addContentBody button:hover {
+    background-color: #46D6C5;
+}

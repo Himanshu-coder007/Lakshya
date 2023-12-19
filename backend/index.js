@@ -4,6 +4,8 @@ import { PORT, mongodbURL } from './config.js'
 import cors from 'cors';
 
 import UserRoutes from './routes/UserRoutes.js'
+import SubjectRoutes from './routes/SubjectRoutes.js'
+import ContentRoutes from './routes/ContentRoutes.js';
 
 const app = express();
 
@@ -16,6 +18,8 @@ app.get('/', (request, response) => {
 });
 
 app.use('/user', UserRoutes);
+app.use('/subject', SubjectRoutes);
+app.use('/content', ContentRoutes);
 
 mongoose
     .connect(mongodbURL)

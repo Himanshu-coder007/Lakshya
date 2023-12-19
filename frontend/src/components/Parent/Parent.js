@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom'
@@ -11,6 +10,7 @@ const Parent = () => {
   return (
     <Routes>
       <Route index path='/' element={<Home />} />
+      <Route path='/ScreeningTest' element={<Home />} />
     </Routes>
   )
 }

@@ -4,10 +4,13 @@ import Logo from '../../../assets/logo.svg';
 import Account from '../../../assets/Account.png';
 import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
+import { Unity } from 'react-unity-webgl';
+import UnityGame from './UnityGame';
 
 const Navbar = () => {
     const [cookies, setCookie] = useCookies(['user']);
     const [userName, setUserName] = useState("");
+    const [expanded, setExpanded] = useState(false);
 
     useEffect(() => {
         if (cookies.user)
@@ -16,22 +19,37 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={styles.teacherNav}>
+            {/* <div className={styles.teacherProfile}>
+                <p>{userName.split(" ")[0]}</p>
+                <img src={Account} alt='Profile' className={styles.accountImage} />
+            </div> */}
+            <nav className={[styles.teacherNav, `${expanded ? styles.expanded : ''}`].join(' ')}>
+                <div 
+                    className={styles.homeLogo}
+                    onClick={() => setExpanded(!expanded)}
+                >
+                    <img src={Logo} alt='Logo' className={expanded ? styles.expandedImage : ''} />
+                    <p>Home</p>
+                </div>
                 <div className={styles.homeLogo}>
                     <img src={Logo} alt='Logo' />
                 </div>
                 <div className={styles.teacherLinks}>
-                    <Link to="/teacher/"><p>Home</p></Link>
+                    {/* <Link to="/teacher/"><p>Home</p></Link>
                     <p>References</p>
                     <p>Options</p>
-                    <Link to='/teacher/viewStudent'><p>Add Students</p></Link>
-                    <p>Discuss</p>
-                </div>
-                <div className={styles.teacherProfile}>
-                    <p>{userName.split(" ")[0]}</p>
-                    <img src={Account} alt='Profile' className={styles.accountImage} />
+                    <p>Create</p>
+                    <p>Discuss</p> */}
+                    <p>Su</p>
+                    <p>Su</p>
+                    <p>Su</p>
+                    <p>Su</p>
+                    <p>Su</p>
+                    <p>Su</p>
                 </div>
             </nav>
+
+            {/* <UnityGame /> */}
 
             {/* Mobile Navbar 
                 <nav className={styles.teacherNav}></nav> 

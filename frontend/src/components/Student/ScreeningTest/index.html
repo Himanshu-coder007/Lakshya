@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Style Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="primary">
+        <header>
+            <div class="head">
+                <h1>
+                    Learning Style Test
+                </h1>
+            </div>
+
+        </header>
+
+        <section id="quizSection">
+            <form>
+                <ol id="questionList"></ol>
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="VARK_QuestionnaireData.js"></script>
+    <script src="app.js"></script>
+    <script>
+        function submitQuiz() {
+            const quizResults = {};
+
+            // Collect values from radio buttons
+            document.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+                const questionName = input.name;
+                const optionValue = input.value;
+                quizResults[questionName] = optionValue;
+            });
+
+            // Convert the data to a query parameter string
+            const queryParams = Object.entries(quizResults)
+                .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+                .join('&');
+
+            // Construct the URL with the query parameters
+            const url = `result.html?${queryParams}`;
+
+            // Navigate to the result.html page
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>

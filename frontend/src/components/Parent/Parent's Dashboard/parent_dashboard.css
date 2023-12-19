@@ -1,0 +1,93 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    background-color: #7C689D;
+    color: #fff;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 10px 10px black;
+}
+
+aside h2 {
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background-color: #7C689D;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: auto;
+    box-shadow: 10px 10px black;
+}
+
+section {
+    margin: 20px;
+}
+
+
+#todays-learning{
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+#calendar {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 20px;
+    
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+#Today{
+    background-color: #d4edda;
+    color: #7C689D;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+#Tommorow{
+    background-color: #d4edda;
+    color: #7C689D;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 10px 10px;
+}
+
+
+#Topic {
+    list-style-type: none;
+    padding: 0;
+}
+
+#children li {
+    margin: 5px 0;
+}
+
+/* Add more styling as needed */

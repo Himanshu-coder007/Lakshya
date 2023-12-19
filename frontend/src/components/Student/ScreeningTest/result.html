@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="result.css">
+  </head>
+  <body>
+    <div id = "result"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        
+        const queryParams = new URLSearchParams(window.location.search);
+
+      
+        var arrResult = [];
+        for (let i = 1; i <= 16; i++) {
+          const questionValue = queryParams.get("question_" + i);
+          arrResult.push(questionValue);
+        }
+        
+
+        var countA = 0, countR = 0, countV = 0, countK = 0;
+        for(let i = 0; i < arrResult.length; i++) {
+            if(arrResult[i] === "K")
+                countK++;
+            else if(arrResult[i] === "A")
+                countA++;
+            else if(arrResult[i] === "R")
+                countR++;
+            else if(arrResult[i] === "V")
+                countV++;
+        }
+
+        console.log(countV / 16 * 100);
+        console.log(countA / 16 * 100);
+        console.log(countR / 16 * 100);
+        console.log(countK / 16 * 100);
+
+        var max = 0;
+        var maxResult = "Visual";
+        if(countV > max) {
+            max = countV;
+            maxResult = "Visual";
+        }
+        else if(countA > max) {
+            max = countA;
+            maxResult = "Aural";
+        }
+        else if(countR > max) {
+            max = countR;
+            maxResult = "Reading";
+        }
+        else if(countK > max) {
+            max = countK;
+            maxResult = "Kinesthetic";
+        }
+        
+        var result = document.getElementById('result');
+        result.innerHTML = "Your predicted learning style is: " + maxResult;
+      });
+    </script>
+  </body>
+</html>

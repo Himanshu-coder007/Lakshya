@@ -8,14 +8,16 @@ import {
 import Home from './HomePage/HomePage.js';
 import Navbar from './Navbar/Navbar.js';
 import ViewStudent from './ViewStudents/ViewStudent.js';
+import AddContentPage from './AddContent/AddContent.js';
 
 const Teacher = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route index path='/' element={<Home />} />
+        <Route index path='/' element={<AddContentPage />} />
         <Route path='/viewStudent' element={<ViewStudent />} />
+        <Route path='/addContent' element={<AddContentPage />} />
       </Routes>
     </>
   )

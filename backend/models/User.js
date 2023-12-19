@@ -16,6 +16,11 @@ const userSchema = mongoose.Schema(
         },
         role: {
             type: String,
+            required: true
+        },
+        learning_style: {
+            type: String,
+            default: 'Visual'
         }
     }
 )

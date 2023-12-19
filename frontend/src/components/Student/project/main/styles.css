@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+
+nav {
+    background-color: rgba(154, 139, 225, 0.5);
+    overflow: hidden;
+}
+
+nav a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.text-link {
+    float: left; 
+    text-align: center;
+    padding: 15px 19px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.chapter-dropdown:hover {
+    display: block;
+}
+
+
+.subject-selection {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(147, 41, 147);
+    color: white;
+    border: none;
+    border-radius: 13px;
+}
+
+.chapterIconOuterDiv {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chapterIconInnerDiv {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chapterIconInnerDiv p {
+    font-size: 30px;
+    margin: 0 !important;
+}
+
+.primary {
+    display: flex;
+    flex-direction:row; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 0 20px;
+}
+
+.secondary {
+    display: flex;
+    flex-direction:row; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 5px 20px;
+}
+
+
+.chapter-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    background-color: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 24%;
+    height: 150px;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.chapter-box:nth-child(odd) {
+    background-color: rgba(154, 139, 225, 0.9);
+    color: white;
+}
+
+.chapter-box:nth-child(even) {
+    background-color: #E4E2F8;
+    color: black;
+}
+
+.chapter-box .first {
+    width: 20%;
+}
+
+.chapter-box .first img {
+    width: 100%;
+}
+
+.chapter-box .second {
+    width: 80%;
+}
+
+.chapter-box h2 {
+    font-size: 21px;
+}
+
+.chapter-box img {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    border-radius: 50%; /* Make it round if needed */
+    margin-bottom: 10px; /* Adjust the margin if needed */
+    
+}
+
+
+
+.progress-bar {
+    background-color: #eee;
+    height: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    background-color: #3498db;
+    height: 100%;
+}
+
+p {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
