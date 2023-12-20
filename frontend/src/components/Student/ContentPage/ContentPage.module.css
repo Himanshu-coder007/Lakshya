@@ -16,8 +16,6 @@
 }
 
 .studentHomePage header {
-    position: sticky;
-    top: 0;
     background-color: #9A8BE1;
     color: #fff;
     padding: 20px 0;
@@ -26,7 +24,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100000;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
 }
 
 .studentHomePage h1 {
@@ -212,8 +212,6 @@
 }
 
 .side-bar .navbar {
-    position: sticky;
-    top: 0;
     padding-top: 20px;
 }
 
@@ -265,7 +263,7 @@
     width: 15%;
 }
 
-.studentdashboardmainnDiv .studentDashboardInnerDiv {
+.studentdashboardmainnDiv .mainContent {
     width: 100%;
 }
 

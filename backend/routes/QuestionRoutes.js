@@ -1,62 +1,42 @@
 import express from 'express';
-import { Content } from './../models/Content.js';
+import { Question } from '../models/Question.js'
 
 const router = express.Router();
 
+
 router.post('/', async (request, response) => {
     try {
-        if (
-            !request.body.topicName ||
-            !request.body.description ||
-            !request.body.class ||
-            !request.body.subjectName ||
-            !request.body.visualContent ||
-            !request.body.auralContent ||
-            !request.body.readingContent ||
-            !request.body.kinestheticContent
-        ) {
-            return response.status(400).send({
-                message: 'Enter all the required fields!'
-            });
-        }
+        const {
+            subject,
+            topic,
+            classLevel,
+            thresholdLow,
+            thresholdHigh,
+            questions,
+        } = req.body;
 
-        const newUser = {
-            topicName: request.body.topicName,
-            description: request.body.description,
-            class: request.body.class,
-            subjectName: request.body.subjectName,
-            visualContent: request.body.visualContent,
-            auralContent: request.body.auralContent,
-            readingContent: request.body.readingContent,
-            kinestheticContent: request.body.kinestheticContent
-        };
+        const newQuestion = new Question({
+            subject,
+            topic,
+            classLevel,
+            thresholdLow,
+            thresholdHigh,
+            questions,
+        });
 
-        const content = await Content.create(newUser);
-
-        return response.status(201).send(content);
+        const content = await Question.create(newQuestion);
+        res.status(201).json({ content });
     } catch (error) {
-        console.log(error.message);
-        return response.status(500).send({ message: error.message });
+        console.error(error);
+        res.status(500).json({ message: "Internal Server Error" });
     }
 });
 
 router.get('/', async (request, response) => {
     try {
-        const content = await Content.find({});
+        const content = await Question.find({});
 
         return response.status(200).json(content);
-    } catch (error) {
-        console.log(error.message);
-        return response.status(500).send({ message: error.message });
-    }
-});
-
-router.get('/:subjectId', async (request, response) => {
-    const { subjectId } = request.params;
-
-    try {
-        const topics = await Content.find({subjectId});
-        return response.status(200).json(topics);
     } catch (error) {
         console.log(error.message);
         return response.status(500).send({ message: error.message });
@@ -67,7 +47,7 @@ router.get('/:id', async (request, response) => {
     try {
         const { id } = request.params;
 
-        const content = await Content.findById(id);
+        const content = await Question.findById(id);
 
         return response.status(200).json(content);
     } catch (error) {

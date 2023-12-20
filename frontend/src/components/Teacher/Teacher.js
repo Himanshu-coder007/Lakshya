@@ -9,6 +9,7 @@ import Home from './HomePage/HomePage.js';
 import Navbar from './Navbar/Navbar.js';
 import ViewStudent from './ViewStudents/ViewStudent.js';
 import AddContentPage from './AddContent/AddContent.js';
+import GenerateAssessment from './GenerateAssessment/GenerateAssessment';
 
 const Teacher = () => {
   return (
@@ -18,6 +19,7 @@ const Teacher = () => {
         <Route index path='/' element={<AddContentPage />} />
         <Route path='/viewStudent' element={<ViewStudent />} />
         <Route path='/addContent' element={<AddContentPage />} />
+        <Route path='/generateAssessment' element={<GenerateAssessment />} />
       </Routes>
     </>
   )

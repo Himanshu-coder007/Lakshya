@@ -18,9 +18,12 @@ const userSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        learning_style: {
+        learningStyle: {
             type: String,
             default: 'Visual'
+        },
+        class: {
+            type: String,
         }
     }
 )

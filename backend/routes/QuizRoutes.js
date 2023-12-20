@@ -1,39 +1,31 @@
 import express from 'express';
-import { Content } from './../models/Content.js';
+import { Quiz } from './../models/Quiz.js';
 
 const router = express.Router();
 
 router.post('/', async (request, response) => {
     try {
         if (
-            !request.body.topicName ||
-            !request.body.description ||
-            !request.body.class ||
             !request.body.subjectName ||
-            !request.body.visualContent ||
-            !request.body.auralContent ||
-            !request.body.readingContent ||
-            !request.body.kinestheticContent
+            !request.body.class ||
+            !request.body.studentId ||
+            !request.body.marks
         ) {
             return response.status(400).send({
                 message: 'Enter all the required fields!'
             });
         }
 
-        const newUser = {
-            topicName: request.body.topicName,
-            description: request.body.description,
-            class: request.body.class,
+        const newQuiz = {
             subjectName: request.body.subjectName,
-            visualContent: request.body.visualContent,
-            auralContent: request.body.auralContent,
-            readingContent: request.body.readingContent,
-            kinestheticContent: request.body.kinestheticContent
+            class: request.body.class,
+            studentId: request.body.studentId,
+            marks: request.body.marks
         };
 
-        const content = await Content.create(newUser);
+        const quiz = await Quiz.create(newQuiz);
 
-        return response.status(201).send(content);
+        return response.status(201).send(quiz);
     } catch (error) {
         console.log(error.message);
         return response.status(500).send({ message: error.message });
@@ -42,21 +34,9 @@ router.post('/', async (request, response) => {
 
 router.get('/', async (request, response) => {
     try {
-        const content = await Content.find({});
+        const quiz = await Quiz.find({});
 
-        return response.status(200).json(content);
-    } catch (error) {
-        console.log(error.message);
-        return response.status(500).send({ message: error.message });
-    }
-});
-
-router.get('/:subjectId', async (request, response) => {
-    const { subjectId } = request.params;
-
-    try {
-        const topics = await Content.find({subjectId});
-        return response.status(200).json(topics);
+        return response.status(200).json(quiz);
     } catch (error) {
         console.log(error.message);
         return response.status(500).send({ message: error.message });
@@ -67,9 +47,9 @@ router.get('/:id', async (request, response) => {
     try {
         const { id } = request.params;
 
-        const content = await Content.findById(id);
+        const quiz = await Quiz.findById(id);
 
-        return response.status(200).json(content);
+        return response.status(200).json(quiz);
     } catch (error) {
         console.log(error.message);
         response.status(500).send({ message: error.message });

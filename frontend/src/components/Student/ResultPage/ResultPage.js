@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import styles from './styles.module.css';
-import SVGImage from './Tick.svg'
+import SVGImage from './Tick.svg';
+import axios from 'axios';
+import { useCookies } from 'react-cookie';
+import { Link } from 'react-router-dom'
 
 const ResultPage = () => {
     const { responses } = useParams();
@@ -10,10 +13,11 @@ const ResultPage = () => {
     const [RPercent, setRPercent] = useState();
     const [KPercent, setKPercent] = useState();
     const [maxResult, setMaxResult] = useState("");
+    const [cookies, setCookie] = useCookies(['user'])
 
     useEffect(() => {
         var arrResult = [];
-        for(let i in responses) {
+        for (let i in responses) {
             arrResult.push(responses[i])
         }
         var countA = 0, countR = 0, countV = 0, countK = 0;
@@ -27,11 +31,6 @@ const ResultPage = () => {
             else if (arrResult[i] === "V")
                 countV++;
         }
-
-        console.log(countV)
-        console.log(countA)
-        console.log(countR)
-        console.log(countK)
 
         setVPercent(countV / 16 * 100);
         setAPercent(countA / 16 * 100);
@@ -58,6 +57,27 @@ const ResultPage = () => {
         }
     }, [responses])
 
+    useEffect(() => {
+        if (cookies && cookies.user) {
+            const id = cookies.user._id
+            const object = {
+                learningStyle: maxResult
+            };
+
+            try {
+                axios.put(`http://localhost:5000/user/${id}`, object)
+                    .then(response => {
+                        console.log('Success')
+                    })
+                    .else(() => {
+                        console.log('Error')
+                    })
+            } catch (err) {
+                console.log(err.message)
+            }
+        }
+    }, [maxResult, cookies.user])
+
     return (
         <div className={styles.resultPageMainDiv}>
             <header>
@@ -75,11 +95,12 @@ const ResultPage = () => {
                     <div className={styles.box4}>
                         <div id={styles.visual}><b>Visual: {VPercent}%</b></div>
                         <div id={styles.aural}><b>Aural: {APercent}%</b></div>
-                        <div id={styles.reading}><b>Reading: {RPercent}%</b></div>
+                        <div id={styles.reading}><b>Reading / Writing: {RPercent}%</b></div>
                         <div id={styles.kinesthetic}><b>Kinesthetic: {KPercent}%</b></div>
                     </div>
                 </div>
             </div>
+            <Link to='/student'><button>Home</button></Link>
         </div>
     )
 }

@@ -65,7 +65,7 @@ router.post('/login', async (request, response) => {
 
         if (user) {
             if (password === user.password) {
-                response.send({ message: "Login successful!", user: { _id: user._id, name: user.name, email: user.email, role: user.role } });
+                response.send({ message: "Login successful!", user: { _id: user._id, name: user.name, email: user.email, role: user.role, learningStyle: user.learningStyle, class: user.class } });
             } else {
                 response.send({ message: "Wrong Credentials!" });
             }

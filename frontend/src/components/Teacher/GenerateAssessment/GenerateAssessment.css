@@ -1,0 +1,49 @@
+.generate-assessment {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .generate-assessment h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .generate-assessment label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .generate-assessment input,
+  .generate-assessment button,
+  .generate-assessment select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  .generate-assessment .threshold {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .generate-assessment button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .generate-assessment button:hover {
+    background-color: #45a049;
+  }

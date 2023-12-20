@@ -14,6 +14,10 @@ const quizSchema = mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'users',
             required: true
+        },
+        marks: {
+            type: String,
+            required: true
         }
     }
 )

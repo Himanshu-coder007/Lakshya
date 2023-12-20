@@ -8,8 +8,8 @@ const Home = () => {
       <aside className={styles.aside}>
         <h2>Menu</h2>
         <ul>
-          <li><Link href="/Parent">Home</Link></li>
-          <li><Link href="/Parent/ScreeningTest">Screening Test</Link></li>
+          <li><Link to="/Parent">Home</Link></li>
+          <li><Link to="/Parent/ScreeningTest">Screening Test</Link></li>
         </ul>
       </aside>
 

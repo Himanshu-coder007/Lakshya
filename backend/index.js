@@ -6,6 +6,9 @@ import cors from 'cors';
 import UserRoutes from './routes/UserRoutes.js'
 import SubjectRoutes from './routes/SubjectRoutes.js'
 import ContentRoutes from './routes/ContentRoutes.js';
+import QuizRoutes from './routes/QuizRoutes.js';
+import QuestionRoutes from './routes/QuestionRoutes.js'
+import ContentSeperateRoutes from './routes/ContentSeperateRoutes.js'
 
 const app = express();
 
@@ -20,6 +23,9 @@ app.get('/', (request, response) => {
 app.use('/user', UserRoutes);
 app.use('/subject', SubjectRoutes);
 app.use('/content', ContentRoutes);
+app.use('/quizData', QuizRoutes);
+app.use('/generateAssessment', QuestionRoutes);
+app.use('/contentseperateRoutes', ContentSeperateRoutes);
 
 mongoose
     .connect(mongodbURL)
