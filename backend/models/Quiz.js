@@ -3,21 +3,25 @@ import mongoose from "mongoose";
 const quizSchema = mongoose.Schema(
     {
         subjectName: {
-            type: String,
-            required: true
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'subject'
         },
         class: {
-            type: String,
-            required: true
+            type: String
         },
         studentId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users',
-            required: true
+            ref: 'users'
         },
         marks: {
-            type: String,
-            required: true
+            type: String
+        },
+        hml: {
+            type: String
+        },
+        quizId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'question'
         }
     }
 )

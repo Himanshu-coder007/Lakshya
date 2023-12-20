@@ -1,26 +1,18 @@
 import express from 'express';
+import { Subject } from '../models/Subject.js';
 import { Quiz } from './../models/Quiz.js';
 
 const router = express.Router();
 
 router.post('/', async (request, response) => {
     try {
-        if (
-            !request.body.subjectName ||
-            !request.body.class ||
-            !request.body.studentId ||
-            !request.body.marks
-        ) {
-            return response.status(400).send({
-                message: 'Enter all the required fields!'
-            });
-        }
-
         const newQuiz = {
             subjectName: request.body.subjectName,
             class: request.body.class,
             studentId: request.body.studentId,
-            marks: request.body.marks
+            marks: request.body.marks,
+            hml: request.body.hml,
+            quizId: request.body.quizId
         };
 
         const quiz = await Quiz.create(newQuiz);
@@ -40,6 +32,20 @@ router.get('/', async (request, response) => {
     } catch (error) {
         console.log(error.message);
         return response.status(500).send({ message: error.message });
+    }
+});
+
+router.get('/:subjectId/:classStudy', async (request, response) => {
+    try {
+        const { subjectId } = request.params;
+        const { classStudy } = request.params;
+
+        const quiz = await Quiz.find({ subjectName: subjectId, class: classStudy });
+
+        return response.status(200).json(quiz);
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
     }
 });
 

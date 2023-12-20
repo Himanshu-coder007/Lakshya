@@ -177,7 +177,6 @@
     overflow: hidden;
 }
 
-
 .side-bar {
     position: sticky;
     top: 0;
@@ -262,7 +261,7 @@
 }
 
 .studentdashboardmainnDiv .side-bar {
-    width: 15%;
+    width: 20%;
 }
 
 .studentdashboardmainnDiv .studentDashboardInnerDiv {

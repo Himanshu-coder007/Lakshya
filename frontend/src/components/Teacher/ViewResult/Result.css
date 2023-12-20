@@ -400,52 +400,213 @@
   top: 26px;
 }
 
-.generate-assessment {
-  max-width: 600px;
-  margin: auto;
+.addContentBody {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 10px 0 50px;
+  font-family: sans-serif;
+}
+
+.addContentBody .pageTitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
+}
+
+.addContentBody .contentForm {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(154, 139, 225, 0.9);
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.generate-assessment h2 {
-  text-align: center;
-  color: #333;
-}
-
-.generate-assessment label {
+.addContentBody label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  /* Make label text bold */
 }
 
-.generate-assessment input,
-.generate-assessment button,
-.generate-assessment select {
+.addContentBody input,
+.addContentBody textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   box-sizing: border-box;
-}
-
-.generate-assessment .threshold {
-  display: flex;
-  justify-content: space-between;
-}
-
-.generate-assessment button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
+  background-color: #E4E2F8;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.generate-assessment button:hover {
+.addContentBody input:focus,
+.addContentBody textarea:focus {
+  outline: 0;
+}
+
+.addContentBody input[type="file"] {
+  border: none;
+}
+
+.addContentBody button {
+  background-color: #53ab91;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+
+.addContentBody button:hover {
+  background-color: #46D6C5;
+}
+
+.viewResultsTeacher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  /* Reset default body margin */
+}
+
+.viewResultsTeacher #root {
+  padding: 0;
+}
+
+.viewResultsTeacher div {
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 100%;
+  width: 70%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10%;
+}
+
+/* Set the overall width of the inner child to 70% */
+.viewResultsTeacher div>div {
+  width: 70%;
+  background-color: #989898;
+}
+
+.viewResultsTeacher h1 {
+  color: white;
+}
+
+.viewResultsTeacher div h1 {
+  font-weight: bold;
+}
+
+.viewResultsTeacher label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+.viewResultsTeacher select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.viewResultsTeacher button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.viewResultsTeacher button:hover {
   background-color: #45a049;
+}
+
+.viewResultsTeacher .primary,
+.viewResultsTeacher .secondary {
+  height: 100%;
+  width: 50%;
+  background-color: white;
+}
+
+.viewResultsTeacher .primary label,
+.viewResultsTeacher .secondary label {
+  font-size: 30px;
+}
+
+.viewResultsTeacher .primary select,
+.viewResultsTeacher .secondary select {
+  height: 40%;
+  border-radius: 20px;
+}
+
+
+
+.viewResultsTeacher select {
+  font-size: 16px;
+  background-color: #CADFE0;
+}
+
+
+.viewResultsTeacher select option {
+  font-size: 16px;
+}
+
+/* Add this style to your CSS file */
+.viewResultsTeacher table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.viewResultsTeacher table,
+.viewResultsTeacher th,
+.viewResultsTeacher td {
+  border: 1px solid black;
+  /* Add borders to the table, th, and td elements */
+}
+
+.viewResultsTeacher th,
+.viewResultsTeacher td {
+  padding: 8px;
+  text-align: left;
+}
+
+.viewResultsTeacher h2 {
+  color: black;
+}
+
+.viewResultsTeacher .result {
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .viewResultsTeacher select {
+    width: calc(100% - 20px);
+  }
+
+  /* Adjust the overall width of the inner child for smaller screens if needed */
+  .viewResultsTeacher div>div {
+    width: 90%;
+  }
 }

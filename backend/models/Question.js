@@ -31,7 +31,13 @@ const questionSchema = mongoose.Schema(
                 },
                 options: [{
                     type: String
-                }]
+                }],
+                correctOption: {
+                    type: String
+                }, 
+                marks: {
+                    type: String
+                }
             },
         ],
     }

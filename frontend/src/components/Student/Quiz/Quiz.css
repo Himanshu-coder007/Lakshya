@@ -12,22 +12,119 @@
 }
 
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
 }
 
+.wrapper header {
+    position: sticky;
+    top: 0;
+    background-color: #9A8BE1;
+    color: #fff;
+    padding: 20px 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+}
+
+.wrapper h1 {
+    font-size: 23px;
+    margin: 30px auto;
+}
+
+.wrapper .side-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 20%;
+    background-color: #E7DDFF;
+    height: 100vh;
+    border-right: var(--border);
+    z-index: 1200;
+}
+
+.wrapper .side-bar #close-btn {
+    text-align: right;
+    padding: 2rem;
+    display: none;
+}
+
+.wrapper .side-bar #close-btn i {
+    text-align: right;
+    font-size: 2.5rem;
+    border-radius: 4.5rem;
+    color: var(--white);
+    cursor: pointer;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+}
+
+.wrapper .side-bar #close-btn i:hover {
+    background-color: var(--black);
+}
+
+.wrapper .studentdashboardmainnDiv {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.wrapper .side-bar .navbar {
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+}
+
+.wrapper .side-bar .navbar a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.wrapper .side-bar .navbar a i {
+    margin-right: 1.5rem;
+    color: var(--main-color);
+    transition: .2s linear;
+}
+
+.wrapper .side-bar .navbar a span {
+    color: var(--light-color);
+}
+
+.wrapper .side-bar .navbar a:hover {
+    background-color: var(--light-bg);
+}
+
+.wrapper .side-bar .navbar a:hover i {
+    margin-right: 2.5rem;
+}
+
+.wrapper .side-bar.active {
+    left: -30rem;
+}
+
 .wrapper .quiz {
-    display: grid;
-    grid-template-rows: 60px auto;
-    width: 600px;
-    height: 500px;
+    padding-top: 40px;
+    width: 100%;
+    height: auto;
     border-radius: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .wrapper .quiz_header {
+    width: 50%;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     border-bottom-left-radius: 3px;
@@ -45,7 +142,9 @@
 }
 
 .wrapper .quiz_body {
+    width: 50%;
     padding: 20px 30px;
+    font-size: 12px;
     background-color: #D7CEFB;
 }
 

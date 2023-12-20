@@ -3,13 +3,16 @@ import styles from './ContentPage.module.css'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
 
 const ContentPage = () => {
+    const navigate = useNavigate();
     const { id } = useParams();
     const [cookies, setCookie] = useCookies(['user'])
     const [topic, setTopic] = useState({})
     const [learningStyle, setLearningStyle] = useState("")
     const [user, setUser] = useState({})
+    const [question, setQuestion] = useState({})
 
     useEffect(() => {
         try {
@@ -19,7 +22,6 @@ const ContentPage = () => {
                     setTopic(res.data)
                 })
         } catch (e) {
-            console.log(e);
         }
     }, [id])
 
@@ -31,11 +33,7 @@ const ContentPage = () => {
                         console.log(res.data);
                         setUser(res.data)
                     })
-                    .else((e) => {
-                        console.log(e);
-                    })
             } catch (e) {
-                console.log(e);
             }
         }
     }, [cookies.user])
@@ -43,6 +41,17 @@ const ContentPage = () => {
     useEffect(() => {
         setLearningStyle(user.learningStyle)
     }, [user])
+
+    const fetchQuiz = () => {
+        try {
+            axios.get(`http://localhost:5000/generateAssessment/${topic.subjectName}/${topic._id}`)
+                .then((response) => {
+                    setQuestion(response.data)
+                    navigate(`/student/quiz/${response.data[0]._id}`)
+                })
+        } catch (e) {
+        }
+    }
 
     const preprocessYouTubeLink = (link) => {
         const videoId = link.split('/').pop();
@@ -75,7 +84,6 @@ const ContentPage = () => {
                     </div>
                     <nav className={styles.navbar}>
                         <Link to='/student/'><span>Home</span></Link>
-                        <Link to="/student/quiz"><span>Quiz</span></Link>
                         <Link to="/student/screeningTest"><span>LSI Test</span></Link>
                     </nav>
                 </div>
@@ -83,14 +91,46 @@ const ContentPage = () => {
                     <h1>{topic.topicName}</h1>
                     <div>
                         {learningStyle === 'Visual' && (
-                            <iframe
-                                width="560"
-                                height="315"
-                                src={preprocessYouTubeLink(topic.visualContent)}
-                                title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                            ></iframe>
+                            <>
+                                <div className={styles.recommended}>
+                                    <h4>Recommended Content according to your Learning Style</h4>
+                                    <iframe
+                                        width="560"
+                                        height="315"
+                                        src={preprocessYouTubeLink(topic.visualContent)}
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                                {/* <div className={styles.someMore}>
+                                    <h4>Want to Learn Through Some More Content...</h4>
+                                    <iframe
+                                        width="560"
+                                        height="315"
+                                        src={preprocessYouTubeLink(topic.auralContent)}
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    ></iframe>
+                                    <iframe
+                                        title="Google Drive Document"
+                                        src={preprocessGoogleDriveLink(topic.readingContent)}
+                                        width="600"
+                                        height="400"
+                                        allowFullScreen
+                                        sandbox="allow-scripts allow-same-origin"
+                                    ></iframe>
+                                    <iframe
+                                        width="560"
+                                        height="315"
+                                        src={preprocessYouTubeLink(topic.kinestheticContent)}
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div> */}
+                            </>
                         )}
                         {learningStyle === 'Aural' && (
                             <iframe
@@ -122,6 +162,9 @@ const ContentPage = () => {
                                 allowFullScreen
                             ></iframe>
                         )}
+                    </div>
+                    <div className={styles.quiz}>
+                        <button onClick={fetchQuiz}>Quiz</button>
                     </div>
                 </div>
             </div>

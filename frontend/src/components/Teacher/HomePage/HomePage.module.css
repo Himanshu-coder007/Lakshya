@@ -4,6 +4,398 @@
     box-sizing: border-box;
 }
 
-.teacherHome {
+.studentHomePage {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.studentHomePage header {
+    position: sticky;
+    top: 0;
+    background-color: #9A8BE1;
+    color: #fff;
+    padding: 20px 0;
+    height: 70px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+}
+
+.studentHomePage h1 {
+    font-size: 23px;
+    margin: 30px auto;
+}
+
+.studentHomePage .container {
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #E4E2F8;
+    max-width: 330px;
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.studentHomePage .container .two {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.studentHomePage .search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.studentHomePage .search-bar form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+}
+
+.studentHomePage .search-bar input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    border-radius: 25px 0 0 25px;
+    border: none;
+}
+
+.studentHomePage .search-bar input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+}
+
+.studentHomePage .img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.studentHomePage .p1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.studentHomePage .subjects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+}
+
+.studentHomePage .subject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.studentHomePage .chapterBox {
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+}
+
+.studentHomePage .icon-container {
+    margin-right: 15px;
+    /* Adjust margin as needed */
+}
+
+.studentHomePage .icon-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.studentHomePage .text-container {
+    flex-grow: 1;
+}
+
+
+.studentHomePage .imageContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 10;
+    margin-bottom: 30px;
+}
+
+.studentHomePage .containers {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    font-weight: bolder;
+}
+
+.studentHomePage .imageContainer .img {
+    width: 100%;
+    height: 100%;
+}
+
+.studentHomePage .imageBox {
+    text-align: center;
+}
+
+.studentHomePage .imageBox img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.imageBox h4 {
+    margin: 0;
+}
+
+.progress {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.side-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    background-color: #E7DDFF;
+    height: 100vh;
+    border-right: var(--border);
+    z-index: 1200;
+}
+
+.side-bar #close-btn {
+    text-align: right;
+    padding: 2rem;
+    display: none;
+}
+
+.side-bar #close-btn i {
+    text-align: right;
+    font-size: 2.5rem;
+    border-radius: 4.5rem;
+    color: var(--white);
+    cursor: pointer;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+}
+
+.side-bar #close-btn i:hover {
+    background-color: var(--black);
+}
+
+.side-bar .navbar {
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+}
+
+.side-bar .navbar a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.side-bar .navbar a i {
+    margin-right: 1.5rem;
+    color: var(--main-color);
+    transition: .2s linear;
+}
+
+.side-bar .navbar a span {
+    color: var(--light-color);
+}
+
+.side-bar .navbar a:hover {
+    background-color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover i {
+    margin-right: 2.5rem;
+}
+
+.side-bar.active {
+    left: -30rem;
+}
+
+.progressBar {
+    width: 40%;
+    height: 20px;
+    background-color: #3498db;
+    transition: width 0.3s ease-in-out;
+}
+
+.studentdashboardmainnDiv {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.studentdashboardmainnDiv .side-bar {
+    width: 20%;
+}
+
+.studentdashboardmainnDiv .studentDashboardInnerDiv {
+    width: 100%;
+}
+
+.subjectSelection {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.subjectSelection label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.subjectSelection select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(147, 41, 147);
+    color: white;
+    border: none;
+    border-radius: 13px;
+}
+
+.primary .chapterIconOuterDiv {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary .chapterIconInnerDiv {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary .chapterIconInnerDiv p {
+    font-size: 30px;
+    margin: 0 !important;
+}
+
+.primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.primary .chapterBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    background-color: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+    height: 150px;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.primary .chapterBox:nth-child(odd) {
+    background-color: rgba(154, 139, 225, 0.9);
+    color: white;
+}
+
+.primary .chapterBox:nth-child(even) {
+    background-color: #E4E2F8;
+    color: black;
+}
+
+.primary .chapterBox .first {
+    width: 20%;
+}
+
+.primary .chapterBox .first img {
+    width: 100%;
+}
+
+.primary .chapterBox .second {
+    width: 80%;
+}
+
+.primary .chapterBox h2 {
+    font-size: 21px;
+}
+
+.primary .chapterBox img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.primary .progressBar {
+    background-color: #eee;
+    height: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.primary .progress {
+    background-color: #3498db;
+    height: 100%;
+}
+
+.primary p {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.userProfile {
+    position: absolute;
+    z-index: 1000;
+    right: 30px;
+    top: 26px;
 }

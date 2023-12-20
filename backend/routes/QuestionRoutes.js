@@ -3,7 +3,6 @@ import { Question } from '../models/Question.js'
 
 const router = express.Router();
 
-
 router.post('/', async (request, response) => {
     try {
         const {
@@ -13,28 +12,44 @@ router.post('/', async (request, response) => {
             thresholdLow,
             thresholdHigh,
             questions,
-        } = req.body;
+        } = request.body;
 
         const newQuestion = new Question({
-            subject,
-            topic,
-            classLevel,
+            subjectName: subject,
+            topicName: topic,
+            class: classLevel,
             thresholdLow,
             thresholdHigh,
             questions,
         });
 
         const content = await Question.create(newQuestion);
-        res.status(201).json({ content });
+        response.status(201).json({ content });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal Server Error" });
+        response.status(500).json({ message: "Internal Server Error" });
     }
 });
 
 router.get('/', async (request, response) => {
     try {
         const content = await Question.find({});
+
+        return response.status(200).json(content);
+    } catch (error) {
+        console.log(error.message);
+        return response.status(500).send({ message: error.message });
+    }
+});
+
+router.get('/:subjectId/:topicId', async (request, response) => {
+    try {
+        const { subjectId } = request.params;
+        const { topicId } = request.params;
+
+        const content = await Question.find({
+            subjectName: subjectId,
+            topicName: topicId
+        });
 
         return response.status(200).json(content);
     } catch (error) {

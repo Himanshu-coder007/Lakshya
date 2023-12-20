@@ -64,7 +64,6 @@ const HomePage = () => {
           </div>
           <nav className={styles.navbar}>
             <Link to='/student/'><span>Home</span></Link>
-            <Link to="/student/quiz"><span>Quiz</span></Link>
             <Link to="/student/screeningTest"><span>LSI Test</span></Link>
           </nav>
         </div>

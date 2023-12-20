@@ -1,0 +1,25 @@
+  #app {
+    text-align: center;
+  }
+
+  #app button {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #app table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #app th,
+  #app td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #app th {
+    background-color: #f2f2f2;
+  }
